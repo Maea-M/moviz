@@ -2,6 +2,12 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Director;
+use App\Entity\Genre;
+use App\Entity\Movie;
+use App\Entity\Review;
+use App\Entity\User;
+
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -23,8 +29,9 @@ class DashboardController extends AbstractDashboardController
             ->setTitle('Symfony Moviz');
     }
 
-    #public function configureMenuItems(): iterable
-    #{
+    public function configureMenuItems(): iterable
+    {
+        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         
-#   }
+    }
 }
